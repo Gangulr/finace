@@ -50,5 +50,3 @@ temp/
 
 # Debugging files
 debug.log
-
-package-lock.json
