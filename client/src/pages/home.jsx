@@ -6,7 +6,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="bg-gradient-to-r  from-[#0A1F44] to-[#1F3A63]  text-white py-20">
         <div className="max-w-6xl mx-auto text-center relative mt-52 z-10">
-          <h2 className="text-5xl font-bold mb-4  drop-shadow-lg">Welcome to Our Finora: Your Finance Hub</h2>
+          <h2 className="text-5xl font-bold mb-4  drop-shadow-lg">Welcome to  FinanceMate: Your Finance Hub</h2>
           <p className="mb-8 text-lg  drop-shadow-md">
             Simplifying financial decisions with real-time analytics and secure management tools.
           </p>
