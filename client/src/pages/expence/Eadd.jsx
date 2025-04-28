@@ -158,7 +158,7 @@ export default function EAdd() {
                         <option value="" disabled>paymentMethods</option>
                         <option value="">select</option>
                         <option value="Cash">Cash</option>
-                        <option value="Credit Card">Credit Card</option>
+                        <option value="Credit Card">Credit Cards</option>
                         <option value="Debit Card">Debit Card</option>
                         <option value="Bank Transfer">Bank Transfer</option>
                     </select>
