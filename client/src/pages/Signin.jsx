@@ -111,9 +111,9 @@ export default function SignIn() {
             </form>
 
              <div className="flex gap-2 text-sm mt-5 text-white justify-center">
-                    <span>Have and account?</span>
+                    <span>Have and aas account?</span>
                     <Link to="/sign-Up" className="text-blue-400 hover:text-blue-500">
-                      Sign Up
+                      Sign Up now
                     </Link>
                   </div>
 
