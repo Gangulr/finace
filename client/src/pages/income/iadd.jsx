@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { FaMoneyBillWave, FaClipboardList, FaCalendarAlt, FaFileAlt } from 'react-icons/fa'; // Importing icons
+import { FaMoneyBillWave, FaClipboardList, FaCalendarAlt, FaFileAlt } from 'react-icons/fa'; 
 
 export default function Add() {
 
