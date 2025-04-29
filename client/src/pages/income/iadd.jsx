@@ -23,7 +23,7 @@ export default function Add() {
           userId: currentUser._id,
           ...formData
         }
-          
+        
         console.log(detail);
 
         const res = await fetch("http://localhost:3000/api/incomes/create", {
@@ -79,7 +79,7 @@ export default function Add() {
         <div className="flex flex-col items-center w-full max-w-md space-y-6 mt-28 bg-gray-800 p-8 rounded-xl shadow-lg opacity-90">
             <h1 className="text-3xl font-bold text-center text-white">Add Income</h1>
             <Link to={`/itable`} className="text-md text-gray-400 hover:text-blue-400 underline">
-                Back
+                BACK
             </Link>
             {publishError && <p className="text-red-500 text-sm">{publishError}</p>}
             <form onSubmit={handleSubmit} className="w-full space-y-4">
@@ -102,8 +102,7 @@ export default function Add() {
                      )}
 
                 </div>
-              
-                
+                            
                 <div className="flex items-center space-x-2">
                     <FaClipboardList className="text-gray-400" />
                     <input
