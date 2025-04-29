@@ -36,14 +36,14 @@ export default function Home() {
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
               <img src="https://images.pexels.com/photos/3182765/pexels-photo-3182765.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Expense Management" className="w-full h-48 rounded-lg mb-4" />
               <h3 className="text-xl font-semibold mb-4">Expense Management</h3>
-              <p>Track your expenses and optimize spending for better financial control.</p>
+              <p>Track your expenses and optimize spending for better financial controll.</p>
             </div>
 
             {/* Income Management Feature */}
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
               <img src="https://img.freepik.com/free-photo/dollar-banknotes-leather-men-s-wallet-brown-wooden-table_8353-6551.jpg?t=st=1742378904~exp=1742382504~hmac=7097a64f6f2d3985625a57ae3b48530e32dbf9dcaf83b74493c6138bddfc2047&w=1380" alt="Income Management" className="w-full h-48 rounded-lg mb-4" />
               <h3 className="text-xl font-semibold mb-4">Income Management</h3>
-              <p>Keep track of your income sources and analyze your financial growth.</p>
+              <p>Keep track of your income sources and analyze your financial growth!</p>
             </div>
 
             {/* Chatbot Feature */}
