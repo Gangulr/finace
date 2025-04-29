@@ -5,7 +5,6 @@ import "jspdf-autotable";
 import { useSelector } from "react-redux";
 import { FaArrowLeft } from "react-icons/fa";
 
-
 export default function ManageEmp() {
   const [Info, setInfo] = useState([]);
   console.log(Info)
@@ -76,12 +75,6 @@ export default function ManageEmp() {
       setfilter(filteredData);
     }
   }, [query, Info]);
-
-
-    
-
- 
-
 
   return (
     <div className="h-[800px] relative bg-cover bg-center" style={{ backgroundImage: 'url(https://images.pexels.com/photos/14856610/pexels-photo-14856610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)' }}>
@@ -178,7 +171,7 @@ export default function ManageEmp() {
                 ) : (
                   <tr>
                     <td colSpan="8" className="text-center text-gray-500 py-4">
-                      No records found
+                      No Records Found
                     </td>
                   </tr>
                 )}
