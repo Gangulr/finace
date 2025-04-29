@@ -151,7 +151,7 @@ export default function ManageEmp() {
                       <td className="px-6 py-4 border-b text-center">
                         <Link to={`/iupdate/${course._id}`}>
                           <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
-                            Edit
+                            EDITE
                           </button>
                         </Link>
                       </td>
@@ -163,7 +163,7 @@ export default function ManageEmp() {
                           }}
                           className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg shadow-md transition duration-300"
                         >
-                          Delete
+                          DELETE
                         </button>
                       </td>
                     </tr>
