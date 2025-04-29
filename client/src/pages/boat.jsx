@@ -18,7 +18,7 @@ function Chatbot() {
     try {
       let formattedMessage = "";
 
-      // Handle greetings
+      //hhhh Handle greetings
       if (userInput.includes("hi") || userInput.includes("hello")) {
         formattedMessage = "Hi, I'm Uma! How can I assist you today? You can ask for your past details like income, expense, or budget.";
       } else if
