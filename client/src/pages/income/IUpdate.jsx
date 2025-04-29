@@ -148,7 +148,7 @@ export default function Update() {
                     </div>
                     <button
                         type="submit"
-                        className="w-full p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full p-3 bg-red-600 text-white rounded-lg hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-500"
                     >
                         Submit
                     </button>
