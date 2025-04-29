@@ -1,7 +1,7 @@
 #  Finance Management System
 
 Welcome to the *Finance Management System* repository!  
-This is a full-stack application for managing vehicle Income Manaegment, Expence, Bugete Planing, user authentication and Report.
+This is a full-stack application for managing finance Income Manaegment, Expence, Bugete Planing, user authentication and Report.
 
 ---
 
