@@ -70,21 +70,6 @@ export default function Add() {
     }
 };
 
- 
-  
-
-
-
-
-
-
-
- 
- 
-
-
- 
-
   return (
     <div className="relative w-full h-[800px] bg-cover bg-center" style={{ backgroundImage: 'url(https://images.pexels.com/photos/14856610/pexels-photo-14856610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)' }}>
     {/* Overlay for better text visibility */}
@@ -159,9 +144,7 @@ export default function Add() {
       onChange={handleChange}
     />
   </div>
-</div>
-
-                
+</div>               
                 <div>
                     <textarea
                         className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
@@ -175,7 +158,7 @@ export default function Add() {
                     type="submit"
                     className="w-full p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
-                    Submit
+                    SUBMIT
                 </button>
             </form>
         </div>
