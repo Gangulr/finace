@@ -96,7 +96,7 @@ export default function Add() {
                 </div>
                 <div className='mt-[-30px]'>
                 {validation && (
-                    <p className=" text-red-700      rounded-lg text-center ">
+                    <p className=" text-red-700  rounded-lg text-center ">
                       {validation}
                     </p>
                      )}
@@ -155,7 +155,7 @@ export default function Add() {
                 </div>
                 <button
                     type="submit"
-                    className="w-full p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-3 bg-blue-600 text-white rounded-lg hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                     SUBMIT
                 </button>
