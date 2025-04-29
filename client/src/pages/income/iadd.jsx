@@ -130,7 +130,7 @@ export default function Add() {
                 </div>
                 
                 <div className="flex flex-col space-y-2">
-  <label htmlFor="dateReceived" className="text-gray-300 ml-6 opacity-50 font-semibold">
+  <label htmlFor="dateReceived" className="text-gray-400 ml-6 opacity-50 font-semibold">
     Date Received
   </label>
   <div className="flex items-center space-x-2">
