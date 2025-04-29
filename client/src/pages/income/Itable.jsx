@@ -172,7 +172,7 @@ export default function ManageEmp() {
                 ) : (
                   <tr>
                     <td colSpan="8" className="text-center text-red-500 py-4">
-                      No Records Found
+                      NO RECORDS FOUND
                     </td>
                   </tr>
                 )}
