@@ -7,17 +7,9 @@ export default function Update() {
     const [formData, setFormData] = useState({});
     const [publishError, setPublishError] = useState(null);
    
-    const navigate = useNavigate();
-
-    
-    
+    const navigate = useNavigate();  
 
       const { incomid } = useParams();
-  
-
-   
-
- 
   
   useEffect(() => {
     try {
@@ -49,9 +41,6 @@ export default function Update() {
     }
   }, [incomid]);
 
-
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -82,14 +71,6 @@ export default function Update() {
       setPublishError("Something went wrong");
     }
   };
-
-
- 
- 
-
-
- 
-
   return (
       <div className="relative w-full h-[800px] bg-cover bg-center" style={{ backgroundImage: 'url(https://images.pexels.com/photos/14856610/pexels-photo-14856610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)' }}>
         {/* Overlay for better text visibility */}
