@@ -120,7 +120,7 @@ export default function ManageEmp() {
          
         </Link>
   
-        {/* Table Container */}
+        {/* Table Create */}
         <div className="lg:w-[1200px] mt-4 rounded-3xl shadow-xl bg-gray-800 text-white overflow-hidden">
           <div className="overflow-x-auto lg:h-[500px]">
             <table className="min-w-full bg-gray-800 text-sm">
