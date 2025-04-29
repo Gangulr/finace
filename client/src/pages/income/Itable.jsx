@@ -119,6 +119,7 @@ export default function ManageEmp() {
           <FaArrowLeft className="mr-2" /> {/* Add left arrow icon */}
          
         </Link>
+        
   
         {/* Table Create */}
         <div className="lg:w-[1200px] mt-4 rounded-3xl shadow-xl bg-gray-800 text-white overflow-hidden">
