@@ -124,7 +124,7 @@ export default function Add() {
                         required
                     >
                         <option value="" disabled>Category</option>
-                        <option value="">select</option>
+                        <option value="">Select</option>
                         <option value="Salary">Salary</option>
                         <option value="Other">Other</option>
                     </select>
