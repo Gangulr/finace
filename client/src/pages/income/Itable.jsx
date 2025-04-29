@@ -108,7 +108,7 @@ export default function ManageEmp() {
               onClick={generatePDF}
               className="mt-4 bg-blue-600 font-serif text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
             >
-              Download PDF
+              Download Pdf
             </button>
           </div>
           <div>
