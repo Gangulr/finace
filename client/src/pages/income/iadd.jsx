@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { FaMoneyBillWave, FaClipboardList, FaCalendarAlt, FaFileAlt } from 'react-icons/fa'; // Importing icons
+import { FaMoneyBillWave, FaClipboardList, FaCalendarAlt, FaFileAlt } from 'react-icons/fa'; 
 
 export default function Add() {
 
@@ -11,16 +11,9 @@ export default function Add() {
     const [validation, setValidation] = useState(null);
     const navigate = useNavigate();
 
-
-
     const handleChange = (e) => {
       setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
     };
-
-    
-    
-
-  
 
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -32,8 +25,6 @@ export default function Add() {
         }
           
         console.log(detail);
-
-
 
         const res = await fetch("http://localhost:3000/api/incomes/create", {
           method: "POST",
@@ -60,12 +51,10 @@ export default function Add() {
       }
     };
 
-
-
     //validation
   const handleamoutChange = (e) => {
     const amount = e.target.value.trim();
-    const quantityPattern = /^[1-9]\d*$/; // Pattern for positive integers
+    const quantityPattern = /^[1-9]\d*$/; 
 
     if (amount === "") {
         setValidation(null);
