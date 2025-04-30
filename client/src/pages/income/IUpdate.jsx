@@ -80,7 +80,7 @@ export default function Update() {
             <div className="flex flex-col items-center w-full max-w-md mt-20 space-y-6 bg-gray-800 p-8 rounded-xl shadow-lg opacity-90">
                 <h1 className="text-3xl font-bold text-center text-white">Update Income</h1>
                 <Link to={`/itable`} className="text-md text-gray-400 hover:text-blue-400 underline">
-                    Back
+                    BACK
                 </Link>
                 {publishError && <p className="text-red-500 text-sm">{publishError}</p>}
                 <form onSubmit={handleSubmit} className="w-full space-y-4">
