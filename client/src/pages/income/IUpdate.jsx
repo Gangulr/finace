@@ -133,7 +133,7 @@ export default function Update() {
                             <option value="" disabled>Category</option>
                             <option value="Rent">Rent</option>
                             <option value="Salary">Salary</option>
-                            <option value="Other">Other</option>
+                            <option value="Other">Other option</option>
                         </select>
                     </div>
                     <div>
