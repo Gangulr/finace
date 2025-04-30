@@ -100,7 +100,7 @@ export default function DashProfile() {
       <div className="flex justify-center items-center min-h-screen relative z-10">
         <div className="bg-opacity-80 bg-gray-800 p-8 rounded-xl shadow-lg max-w-3xl w-full">
           <div className="text-center mb-6">
-            <h3 className="text-3xl font-semibold text-yellow-400">User Profile</h3>
+            <h3 className="text-3xl font-semibold text-yellow-400">Users Profile</h3>
           </div>
           
                     <Link to={`/dash`} className="text-md text-gray-400 mb-6 hover:text-blue-400 underline flex items-center">
