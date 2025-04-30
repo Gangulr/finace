@@ -48,8 +48,6 @@ export const deleteIncome = async (req, res) => {
   }
 };
 
-
-
 export const getCurrentItem = async (req, res, next) => {
     
   try {
@@ -60,9 +58,6 @@ export const getCurrentItem = async (req, res, next) => {
     const items = await Income.find({ userId});
     console.log(items)
 
-    
-
-    
     res.json(items);
 
   } catch (error) {
