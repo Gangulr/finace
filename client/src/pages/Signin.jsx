@@ -86,7 +86,7 @@ export default function SignIn() {
 
               {/* Password Input */}
               <div>
-                <h3 className="font-semibold text-gray-200 opacity-70 ml-1">Password</h3>
+                <h3 className="font-semibold text-gray-200 opacity-70 ml-1">Passworddd</h3>
                 <input
                   className="bg-slate-800 bg-opacity-70 border-white p-4 border-opacity-50 rounded-lg w-full h-12 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                   type="password"
