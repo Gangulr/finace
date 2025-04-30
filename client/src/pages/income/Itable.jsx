@@ -48,7 +48,6 @@ export default function ManageEmp() {
     });
     doc.save("income.pdf");
   };
-
   const handleDeleteUser = async () => {
     try {
       const res = await fetch(`http://localhost:3000/api/incomes/delete/${DId}`, {
@@ -101,8 +100,8 @@ export default function ManageEmp() {
               onClick={generatePDF}
               className="mt-4 bg-blue-600 font-serif text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
             >
-              Download Pdf
-            </button>
+              Download PDF
+          </button>
           </div>
           <div>
             <Link to={`/Iadd`}>
