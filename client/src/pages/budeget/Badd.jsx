@@ -7,8 +7,8 @@ export default function BAdd() {
   const [formData, setFormData] = useState({});
   const [publishError, setPublishError] = useState(null);
   const { currentUser } = useSelector((state) => state.user);
-  console.log(formData)
-    const [validation, setValidation] = useState(null);
+  console.log(formData);
+  const [validation, setValidation] = useState(null);
 
   const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ export default function BAdd() {
     try {
       const detail = {
         userId: currentUser._id,
-        ...formData
+        ...formData,
       };
 
       console.log(detail);
@@ -29,9 +29,9 @@ export default function BAdd() {
       const res = await fetch("http://localhost:3000/api/budgets/create", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(detail)
+        body: JSON.stringify(detail),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -50,24 +50,23 @@ export default function BAdd() {
     }
   };
 
+  //validation
+  const handleamoutChange = (e) => {
+    const amount = e.target.value.trim();
+    const quantityPattern = /^[1-9]\d*$/; // Pattern for positive integers
 
-    //validation
-    const handleamoutChange = (e) => {
-      const amount = e.target.value.trim();
-      const quantityPattern = /^[1-9]\d*$/; // Pattern for positive integers
-  
-      if (amount === "") {
-          setValidation(null);
-      } else if (!quantityPattern.test(amount)) {
-          if (isNaN(amount)) {
-              setValidation("amount must be a number");
-          } else {
-              setValidation("amount must be a positive integer");
-          }
+    if (amount === "") {
+      setValidation(null);
+    } else if (!quantityPattern.test(amount)) {
+      if (isNaN(amount)) {
+        setValidation("amount must be a number");
       } else {
-          setFormData({ ...formData, amount });
-          setValidation(null);
+        setValidation("amount must be a positive integer");
       }
+    } else {
+      setFormData({ ...formData, amount });
+      setValidation(null);
+    }
   };
 
   return (
@@ -75,11 +74,13 @@ export default function BAdd() {
       className="relative w-full h-[800px] bg-cover bg-center"
       style={{
         backgroundImage:
-          "url(https://images.pexels.com/photos/14856610/pexels-photo-14856610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)"
+          "url(https://images.pexels.com/photos/14856610/pexels-photo-14856610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)",
       }}
     >
       {/* Overlay for better text visibility */}
       <div className="absolute inset-0 bg-black opacity-60"></div>
+
+      
 
       <div className="relative z-10 flex items-center justify-center h-full">
         <div className="flex flex-col items-center w-full max-w-md mt-20 space-y-6 bg-gray-800 p-8 rounded-xl shadow-lg opacity-90">
@@ -107,72 +108,69 @@ export default function BAdd() {
               />
             </div>
 
-            <div className='mt-[-30px]'>
-                {validation && (
-                    <p className=" text-red-700      rounded-lg text-center ">
-                      {validation}
-                    </p>
-                     )}
-
-                </div>
-
-
+            <div className="mt-[-30px]">
+              {validation && (
+                <p className=" text-red-700      rounded-lg text-center ">
+                  {validation}
+                </p>
+              )}
+            </div>
 
             <div className="flex items-center space-x-2">
-                                <FaFileAlt className="text-gray-400" />
-                                <select
-                                    name="category"
-                                    id="category"
-                                    onChange={handleChange}
-                                    className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
-                                    required
-                                >
-                                    <option value="" disabled>Category</option>
-                                    <option value="">select</option>
-                                    <option value="Salary">Salary</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </div>
-
-           
-
-            <div className="flex flex-col space-y-2">
-  <label htmlFor="dateReceived" className="text-gray-300 ml-6 opacity-50 font-semibold">
-  Start Date
-  </label>
-  <div className="flex items-center space-x-2">
-    <FaCalendarAlt className="text-gray-400" />
-    <input
-      className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
-      type="date"
-      placeholder="startDate"
-      id="startDate"
-      onChange={handleChange}
-    />
-  </div>
-</div>
-
-            
-
-
+              <FaFileAlt className="text-gray-400" />
+              <select
+                name="category"
+                id="category"
+                onChange={handleChange}
+                className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                required
+              >
+                <option value="" disabled>
+                  Category
+                </option>
+                <option value="">select</option>
+                <option value="Salary">Salary</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
 
             <div className="flex flex-col space-y-2">
-  <label htmlFor="dateReceived" className="text-gray-300 ml-6 opacity-50 font-semibold">
-  End Date
-  </label>
-  <div className="flex items-center space-x-2">
-    <FaCalendarAlt className="text-gray-400" />
-    <input
-      className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
-      type="date"
-      placeholder="Date Received"
-      id="endDate"
-      onChange={handleChange}
-    />
-  </div>
-</div>
+              <label
+                htmlFor="dateReceived"
+                className="text-gray-300 ml-6 opacity-50 font-semibold"
+              >
+                Start Date
+              </label>
+              <div className="flex items-center space-x-2">
+                <FaCalendarAlt className="text-gray-400" />
+                <input
+                  className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                  type="date"
+                  placeholder="startDate"
+                  id="startDate"
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
 
-           
+            <div className="flex flex-col space-y-2">
+              <label
+                htmlFor="dateReceived"
+                className="text-gray-300 ml-6 opacity-50 font-semibold"
+              >
+                End Date
+              </label>
+              <div className="flex items-center space-x-2">
+                <FaCalendarAlt className="text-gray-400" />
+                <input
+                  className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                  type="date"
+                  placeholder="Date Received"
+                  id="endDate"
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
 
             <div>
               <textarea

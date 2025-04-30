@@ -18,29 +18,22 @@ function Chatbot() {
     try {
       let formattedMessage = "";
 
-      // Handle greetings
       if (userInput.includes("hi") || userInput.includes("hello")) {
         formattedMessage = "Hi, I'm Uma! How can I assist you today? You can ask for your past details like income, expense, or budget.";
-      } else if
-        (userInput.includes("ok") || userInput.includes("how i do that")) {
-          formattedMessage = " You can ask for your past details like income, expense, or budget.";
-
-      }else if (userInput.includes("thank you") || userInput.includes("it work")) {
+      } else if (userInput.includes("ok") || userInput.includes("how i do that")) {
+        formattedMessage = "You can ask for your past details like income, expense, or budget.";
+      } else if (userInput.includes("thank you") || userInput.includes("it work")) {
         formattedMessage = "Happy to help!";
-
-    }
-      
-      else if (userInput.includes("budget") || userInput.includes("past budget") ) {
+      } else if (userInput.includes("budget") || userInput.includes("past budget")) {
         formattedMessage = await getPastDetails("budget");
-      } else if (userInput.includes("income") || userInput.includes("past income") ) {
+      } else if (userInput.includes("income") || userInput.includes("past income")) {
         formattedMessage = await getPastDetails("income");
-      } else if (userInput.includes(" expense") || userInput.includes("past expense") ) {
+      } else if (userInput.includes("expense") || userInput.includes("past expense")) {
         formattedMessage = await getPastDetails("expense");
       } else {
         formattedMessage = "I'm not sure what you're asking. Please ask about past details like income, expense, or budget.";
       }
 
-      // Add response to messages
       setMessages([...newMessages, { user: "Reply", text: formattedMessage }]);
     } catch (error) {
       setMessages([...newMessages, { user: "Reply", text: "Sorry, there was an error processing your request." }]);
@@ -49,11 +42,10 @@ function Chatbot() {
     setInput("");
   };
 
-  // Fetch and format past details
   const getPastDetails = async (type) => {
-    const [category, month] = input.split(","); // Split input for month details
+    const [category, month] = input.split(",");
     const url = `/api/auth/${type}/${userid}/${month}`;
-    
+
     try {
       const response = await fetch(url, {
         method: "GET",
@@ -73,7 +65,6 @@ function Chatbot() {
     }
   };
 
-  // Format response data in a user-friendly way
   const formatResponse = (data) => {
     if (!Array.isArray(data) || data.length === 0) return "No data found.";
 
@@ -91,19 +82,30 @@ function Chatbot() {
   };
 
   return (
-    <div className="bg-cover bg-center h-screen" 
-         style={{ backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/fir-8506f.appspot.com/o/wmremove-transformed%20(1).png?alt=media&token=e93cd503-e78d-4cd8-8021-0e26a707efff')" }}>
-      <div className="flex justify-center items-center h-full">
-        <Link to={`/dash`} className="text-md text-gray-400 hover:text-blue-400 underline flex items-center">
+    <div className="bg-cover bg-center h-screen relative"
+      style={{
+        backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/fir-8506f.appspot.com/o/wmremove-transformed%20(1).png?alt=media&token=e93cd503-e78d-4cd8-8021-0e26a707efff')"
+      }}
+    >
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+
+      <div className="relative z-10 flex flex-col items-center justify-start h-full px-4 pt-[12vh]">
+        {/* Title */}
+        <h2 className="text-4xl font-bold text-white mb-4">ChatBot</h2>
+
+        {/* Back link */}
+        <Link to={`/dash`} className="text-md text-gray-400 hover:text-blue-400 underline flex items-center mb-4">
           <FaArrowLeft className="mr-2" />
+          Back to Dashboard
         </Link>
-        <div className="flex flex-col w-full h-[80%] max-w-md mt-24 bg-gray-900 text-white rounded-lg shadow-lg overflow-hidden">
+
+        <div className="flex flex-col w-full h-[75%] max-w-md bg-gray-900 text-white rounded-lg shadow-lg overflow-hidden">
           <div className="flex-grow p-6 space-y-4 overflow-y-auto scrollbar-hide bg-stone-900 bg-opacity-90 rounded-lg">
             {messages.map((message, index) => (
               <div key={index} className={`flex flex-col ${message.user === "You" ? "items-end" : "items-start"}`}>
-                <div className={`inline-block p-3 rounded-lg max-w-xs ${message.user === "You" ? "bg-blue-700 text-white" : "bg-gray-700 text-white"}`}>
+                <div className={`inline-block p-3 rounded-lg max-w-xs whitespace-pre-wrap ${message.user === "You" ? "bg-blue-700 text-white" : "bg-gray-700 text-white"}`}>
                   <strong>{message.user}:</strong>
-                  <span className="ml-1 whitespace-pre-wrap">{message.text}</span>
+                  <span className="ml-1">{message.text}</span>
                 </div>
               </div>
             ))}

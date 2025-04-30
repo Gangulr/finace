@@ -38,15 +38,15 @@ const Header = () => {
 
       <div className="ml-64 flex gap-6 pt-4">
         {[
-          { name: "Home", path: "/" },
-          { name: "Budgeting", path: "/" },
-          { name: "Investments",  },
-          { name: "Savings",  },
-          { name: "Account",  },
-          { name: "OpenAirActivity"},
+          
           // Conditionally render "Dashboard" link if currentUser is logged in
-          currentUser && { name: "Dashboard", path: "/dash" }, 
-          { name: "Register", path: "/sign-up" },
+          currentUser && { name: "Home", path: "/dash" }, 
+          { name: "Budget", path: "/Btable" }, 
+          { name: "Income", path: "/itable" }, 
+          { name: "Expense", path: "/etable" }, 
+          { name: "ChatBot", path: "/Boat" }, 
+
+          
         ]
           .filter(Boolean) // Remove undefined value from the array
           .map(({ name, path }) => (

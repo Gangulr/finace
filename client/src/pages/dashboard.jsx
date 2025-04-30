@@ -120,7 +120,7 @@ export default function Dashboard() {
             <Link to={`/Boat`}>
             <button className="flex items-center justify-between w-full sm:w-60 p-4 bg-gradient-to-r from-yellow-700 via-yellow-800 to-black text-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-110 transform transition duration-300 ease-in-out hover:ring-2 hover:ring-white hover:ring-opacity-50">
               <FaChartLine className="text-2xl" />
-              <span className="ml-3 text-lg">Chat Boat</span>
+              <span className="ml-3 text-lg">Chat Bot</span>
             </button>
             </Link>
           </div>
