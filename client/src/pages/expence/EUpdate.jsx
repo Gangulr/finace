@@ -140,6 +140,9 @@ export default function EUpdate() {
                              <option value="" disabled>Category</option>
                              <option value="">select</option>
                              <option value="Salary">Salary</option>
+                             <option value="Rent">Rent</option>
+                             <option value="Bills">Bills</option>
+                             <option value="Grocery">Grocery</option>
                              <option value="Other">Other</option>
                          </select>
                      </div>

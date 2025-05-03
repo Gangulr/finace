@@ -7,22 +7,17 @@ import { FaArrowLeft } from "react-icons/fa";
 
 export default function EManageEmp() {
   const [Info, setInfo] = useState([]);
-  console.log(Info);
   const [DId, setformId] = useState("");
   const [filter, setfilter] = useState([]);
   const [query, setQuery] = useState("");
   const { currentUser } = useSelector((state) => state.user);
-  console.log(currentUser._id);
   const customerId = currentUser ? currentUser._id : null;
 
   useEffect(() => {
     const fetchinfo = async () => {
       try {
-        const res = await fetch(
-          `http://localhost:3000/api/auth/getuser`
-        );
+        const res = await fetch("http://localhost:3000/api/auth/getuser");
         const data = await res.json();
-        console.log(data);
         if (res.ok) {
           setInfo(data);
         }
@@ -36,18 +31,16 @@ export default function EManageEmp() {
   const generatePDF = () => {
     const doc = new jsPDF();
     doc.autoTable({
-      head: [["User", "email", "password"]],
+      head: [["User", "Email", "Password"]],
       body: filter.map((course) => [
         course.username,
         course.email,
         course.password,
-
-      
       ]),
       theme: "grid",
-      headStyles: { fillColor: [0, 0, 255] }
+      headStyles: { fillColor: [0, 0, 255] },
     });
-    doc.save("expence.pdf");
+    doc.save("userlist.pdf"); // Updated file name
   };
 
   const handleDeleteUser = async () => {
@@ -55,7 +48,7 @@ export default function EManageEmp() {
       const res = await fetch(
         `http://localhost:3000/api/auth/adelete/${DId}`,
         {
-          method: "DELETE"
+          method: "DELETE",
         }
       );
       if (res.ok) {
@@ -73,7 +66,8 @@ export default function EManageEmp() {
     } else {
       const filteredData = Info.filter(
         (course) =>
-          course.username && course.username.toLowerCase().includes(query.toLowerCase())
+          course.username &&
+          course.username.toLowerCase().includes(query.toLowerCase())
       );
       setfilter(filteredData);
     }
@@ -84,10 +78,10 @@ export default function EManageEmp() {
       className="h-[800px] relative bg-cover bg-center"
       style={{
         backgroundImage:
-          "url(https://images.pexels.com/photos/14856610/pexels-photo-14856610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)"
+          "url(https://images.pexels.com/photos/14856610/pexels-photo-14856610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)",
       }}
     >
-      {/* Dark overlay for readability */}
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
       <div className="items-center justify-center flex relative z-10">
@@ -104,33 +98,31 @@ export default function EManageEmp() {
 
           {/* Action Buttons */}
           <div className="flex justify-center gap-4 mt-4">
-            <div>
-              <button
-                onClick={generatePDF}
-                className="mt-4 bg-blue-600 font-serif text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
-              >
-                Download PDF
-              </button>
-            </div>
-           
+            <button
+              onClick={generatePDF}
+              className="mt-4 bg-blue-600 font-serif text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
+            >
+              Download PDF
+            </button>
           </div>
 
-            <Link to={`/dash`} className="text-md text-gray-400 hover:text-blue-400 underline flex items-center">
-            <FaArrowLeft className="mr-2" /> {/* Add left arrow icon */}
-           
+          <Link
+            to={`/dash`}
+            className="text-md text-gray-400 hover:text-blue-400 underline flex items-center mt-4"
+          >
+            <FaArrowLeft className="mr-2" />
+            Back to Dashboard
           </Link>
 
-          {/* Table Container */}
+          {/* Table */}
           <div className="lg:w-[1200px] mt-4 rounded-3xl shadow-xl bg-gray-800 text-white overflow-hidden">
             <div className="overflow-x-auto lg:h-[500px]">
               <table className="min-w-full bg-gray-800 text-sm">
                 <thead className="bg-blue-800 text-white">
                   <tr>
-                    <th className="px-6 py-4 text-left">username</th>
-                    <th className="px-6 py-4 text-left">email</th>
-                    <th className="px-6 py-4 text-left">password</th>
-                    
-        
+                    <th className="px-6 py-4 text-left">Username</th>
+                    <th className="px-6 py-4 text-left">Email</th>
+                    <th className="px-6 py-4 text-left">Password</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -149,18 +141,11 @@ export default function EManageEmp() {
                         <td className="px-6 py-4 border-b text-gray-200">
                           {course.password}
                         </td>
-                        
-
-                       
-                      
                       </tr>
                     ))
                   ) : (
                     <tr>
-                      <td
-                        colSpan="8"
-                        className="text-center text-gray-500 py-4"
-                      >
+                      <td colSpan="8" className="text-center text-gray-500 py-4">
                         No records found
                       </td>
                     </tr>
